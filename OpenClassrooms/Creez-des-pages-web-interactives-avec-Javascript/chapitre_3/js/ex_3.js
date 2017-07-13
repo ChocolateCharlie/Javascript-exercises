@@ -13,6 +13,23 @@ var mots = [
 	}
 ];
 
+var listeElt = document.createElement("dl");
+document.getElementById("contenu").appendChild(listeElt);
 
-// TODO : créer le dictionnaire sur la page web, dans la div "contenu"
+mots.forEach(function(mot)
+{
+	var termeElt = document.createElement("dt");
+	var strongElt = document.createElement("strong");
+
+	strongElt.textContent = mot.terme;
+
+	termeElt.appendChild(strongElt);
+	listeElt.appendChild(termeElt);
+
+	var definitionElt = document.createElement("dd");
+
+	definitionElt.textContent = mot.definition;
+
+	listeElt.appendChild(definitionElt);
+});
 
